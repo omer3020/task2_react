@@ -1,5 +1,16 @@
 import React, { Component, } from 'react';
 import CCRecipes from './CCRecipes';
+import styled from 'styled-components';
+
+const Container = styled.div`
+margin:200px;
+color: red;
+height:100vh;
+
+&:hover{color:black}
+`;
+
+
 
 const Dishs = [
     { id:1, title: 'title', description: 'avi',pic:'pic' },
@@ -24,16 +35,17 @@ getDataFromRecipes = (id) =>{
 deleteDish = (dishId) => {
     let newDlist = this.state.dList.filter((dish) => dish.id !== dishId);
     this.setState({ dList: newDlist });
+    console.log(this.state.dList)
 		
   }
 
 render(){
     return(
-    <div>
+    <Container>
       <div><CCRecipes 
       getDataFromRecipes={this.getDataFromRecipes}
       dishs = {this.state.dList}/></div> 
-    </div>
+    </Container>
     )
 }
 }

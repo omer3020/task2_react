@@ -8,11 +8,7 @@ export default class CCRecipe extends Component {
     
         this.state =
         {
-            cardTitle:this.props.title,
-            cardDescription:this.props.description,
-            cardPic:this.props.pic,
-            cardId:this.props.id
-
+          
         };
 }
 
@@ -25,13 +21,13 @@ render(){
     return(
     <div>
       <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={this.state.cardPic} />
+  <Card.Img variant="top" src={this.props.pic} />
   <Card.Body>
-    <Card.Title>{this.state.cardTitle}</Card.Title>
+    <Card.Title>{this.props.title}</Card.Title>
     <Card.Text>
-      {this.state.cardDescription}
+      {this.props.description}
     </Card.Text>
-    <Button onClick={()=>{this.preperDish(this.state.cardId)}} variant="primary">Prepare dish</Button>
+    <Button onClick={()=>{this.preperDish(this.props.id)}} variant="primary">Prepare dish</Button>
   </Card.Body>
 </Card>
     </div>

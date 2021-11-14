@@ -9,7 +9,7 @@ export default class CCRecipes extends Component {
     
         this.state =
         {
-            dishs:this.props.dishs
+            // dishs:this.props.dishs
         };
 
     }
@@ -21,19 +21,18 @@ export default class CCRecipes extends Component {
 
 
 render(){
-    console.log(this.state.dishs)
-     const dishsSTR = this.state.dishs.map((dish) => 
+return(
+    <div>
+       {this.props.dishs.map((dish) => 
     <CCRecipe 
+    key={dish.id}
     getDataFromRecipe={this.getDataFromRecipe} 
     title={dish.title} 
     description={dish.description}
     pic={dish.pic}
-    id={dish.id}/>
-       );
-
-return(
-    <div>
-       {dishsSTR}
+    id={dish.id}
+    />
+       )}
     </div>  
     
     );
