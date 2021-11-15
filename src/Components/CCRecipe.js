@@ -1,6 +1,14 @@
 import React, { Component, } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import styled from 'styled-components';
+
+const CardContainer = styled.div`
+
+float:left
+background-color: black;
+`;
+
 
 export default class CCRecipe extends Component {
     constructor(props) {
@@ -12,6 +20,8 @@ export default class CCRecipe extends Component {
         };
 }
 
+
+
 preperDish = (perId) => {
    this.props.getDataFromRecipe(perId)
   }
@@ -19,7 +29,7 @@ preperDish = (perId) => {
 
 render(){
     return(
-    <div>
+    <CardContainer>
       <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={this.props.pic} />
   <Card.Body>
@@ -27,10 +37,10 @@ render(){
     <Card.Text>
       {this.props.description}
     </Card.Text>
-    <Button onClick={()=>{this.preperDish(this.props.id)}} variant="primary">Prepare dish</Button>
+    <Button onClick={()=>{this.preperDish(this.props.id)}} variant={this.props.variant}>{this.props.buttonName}</Button>
   </Card.Body>
 </Card>
-    </div>
+    </CardContainer>
     )
 }
 }

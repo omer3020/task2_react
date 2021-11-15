@@ -14,27 +14,31 @@ export default class CCRecipes extends Component {
 
     }
 
-    getDataFromRecipe = (id) => {
+    getDataFromRecipesTop = (id) => {
         // console.log(data);
         this.props.getDataFromRecipes(id)
       }
 
 
 render(){
+    console.log(this.props.dishs)
+
 return(
     <div>
        {this.props.dishs.map((dish) => 
     <CCRecipe 
     key={dish.id}
-    getDataFromRecipe={this.getDataFromRecipe} 
+    getDataFromRecipe = {this.getDataFromRecipesTop} 
     title={dish.title} 
     description={dish.description}
     pic={dish.pic}
     id={dish.id}
+    buttonName={"Prepare Dish"}
+    variant={"primary"}
     />
        )}
     </div>  
     
     );
     }
-    }
+}
