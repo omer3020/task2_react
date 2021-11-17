@@ -5,8 +5,17 @@ import styled from 'styled-components';
 
 const CardContainer = styled.div`
 
-float:left
-background-color: black;
+float:left;
+margin:5px;
+
+img {
+  
+  height: 200px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+}
 `;
 
 

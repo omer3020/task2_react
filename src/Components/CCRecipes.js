@@ -2,6 +2,12 @@ import React, { Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CCRecipe from './CCRecipe';
+import styled from 'styled-components';
+
+const Container = styled.div`
+
+`;
+
 
 export default class CCRecipes extends Component {
     constructor(props) {
@@ -21,10 +27,12 @@ export default class CCRecipes extends Component {
 
 
 render(){
-    console.log(this.props.dishs)
+    // console.log(this.props.dishs)
 
 return(
-    <div>
+    <Container>
+    <h2>Recipes</h2>
+    <h6>Recipes made:</h6>
        {this.props.dishs.map((dish) => 
     <CCRecipe 
     key={dish.id}
@@ -37,7 +45,7 @@ return(
     variant={"primary"}
     />
        )}
-    </div>  
+    </Container>  
     
     );
     }
